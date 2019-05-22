@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<title>Payment</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-wide w3-padding w3-card">
+    <a href="index.html" class="w3-bar-item w3-button"><b>Sound</b>Coustics</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right">
+      <a href="shop.html" class="w3-bar-item w3-button w3-hover-red">Back to Shop</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+	<div class="w3-row w3-container w3-border w3-card">
+	<div class="w3-half">
+	<h1><u>Delivery Address</u></h1>
+	<h3>
+	Kg. Bingkor Baru, P/S 87, <br>
+	89000 Keningau, <br>
+	Sabah.
+	</h3>
+	</div>
+	<div class="w3-half">
+	<h1><u>Shopping Trolley</u></h1>
+	<h3>
+	RainSong Guitars Black Ice Series BI-WS1000N2 Acoustic-Electric Guitar, Natural carbon 
+	</h3>
+	</div>
+	</div>
+	
+	<br>
+	
+	<div class="w3-container w3-border w3-card">
+	<h1><b>Payment Method</b></h1>
+	<p>Please select a payment method.</p>
+	
+	<div class="w3-row">
+    <a href="javascript:void(0)" onclick="openCity(event, 'London');">
+      <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding"><b>Credit/Debit Card</b></div>
+    </a>
+    <a href="javascript:void(0)" onclick="openCity(event, 'Paris');">
+      <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding"><b>Online Banking (FPX)</b></div>
+    </a>
+    <a href="javascript:void(0)" onclick="openCity(event, 'Tokyo');">
+      <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding"><b>ATM/Cash Deposit</b></div>
+    </a>
+  </div>
+  
+  <div id="London" class="w3-container city w3-animate-opacity" style="display:none">
+    <h3>Add New Credit Card</h3>
+	<input class="w3-input w3-section w3-border" type="text" placeholder="Name on Card" required>
+	<input class="w3-input w3-section w3-border" type="text" placeholder="Credit Card Number" required>
+	<table>
+	<tr>
+	<td>Expires on <br><input class="w3-input w3-section w3-border" type="text" placeholder="MM"></td>
+	<td><br><input class="w3-input w3-section w3-border" type="text" placeholder="YYYY"></td>
+	<td>CVV <br><input class="w3-input w3-section w3-border" type="text" placeholder="000"></td>
+	</tr>
+	</table>
+	<p class="w3-text-grey">We work with CyberSouce, a VISA company to make sure your credit card details are securely stored. 
+	SoundCoustics will not have access to your credit card information.
+	</p>
+	<button class="w3-right w3-xlarge w3-button w3-black w3-section" type="submit"> Proceed</button>
+  </div>
+
+  <div id="Paris" class="w3-container city w3-animate-opacity" style="display:none">
+	<h3>Select an Online Banking Platform</h3>
+    <p>
+	<input class="w3-radio" type="radio" name="gender" value="male">
+	<label><img class="w3-border w3-image" src="images/img_bankmy_cimb.png" width="50"> CIMB Clicks</label>
+	</p>
+	<p>
+	<input class="w3-radio" type="radio" name="gender" value="male">
+	<label><img class="w3-border w3-image" src="images/img_bankmy_islam_fpx.png" width="50"> Bank Islam</label>
+	</p>
+	<p>
+	<input class="w3-radio" type="radio" name="gender" value="male">
+	<label><img class="w3-border w3-image" src="images/img_bankmy_public_fpx.png" width="50"> Public Bank</label>
+	</p>
+	<p>
+	<input class="w3-radio" type="radio" name="gender" value="male">
+	<label><img class="w3-border w3-image" src="images/img_bankmy_am.png" width="50"> Ambank</label>
+	</p>
+	<button class="w3-right w3-xlarge w3-button w3-black w3-section" type="submit"> Proceed</button>
+  </div>
+
+  <div id="Tokyo" class="w3-container city w3-animate-opacity" style="display:none">
+	<center><button class="w3-xlarge w3-button w3-black w3-section" type="submit"> Create an Order</button></center>
+  </div>
+ 
+</div>
+
+
+<br><br>
+<script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-border-red", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-border-red";
+}
+</script>
+</body>
+</html>

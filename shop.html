@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<title>Shop</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-wide w3-padding w3-card">
+    <a href="index.html" class="w3-bar-item w3-button"><b>Sound</b>Coustics</a>
+	
+	<div class="w3-hide-small">
+	<i class="w3-xlarge w3-bar-item fa fa-search"></i>
+	<input type="text" class="w3-bar-item w3-input w3-white w3-mobile" placeholder="Search product..." id="nameInput" onkeyup="SearchName()">
+	</div>
+	
+    <select class="w3-bar-item w3-right w3-select w3-hide-small" placeholder="Categories" name="option" id="facInput" onchange="SearchFac()">
+		<option value="">Categories</option>
+		<option value="guitar">Guitars</option>
+		<option value="ukulele">Ukuleles</option>
+		<option value="other">Others</option>
+	</select>
+	
+	
+  </div>
+</div>
+
+
+<!-- !PAGE CONTENT! -->
+<div id="myTable" class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+ 	
+	<a href="guitar1.html">
+    <div href="" class="w3-quarter w3-hover-grey w3-border">
+      <img src="images/guitar1.jpg" alt="Steak" style="width:60%">
+      <p>RainSong Guitars Black Ice Series BI-WS1000N2 Acoustic-Electric Guitar, Natural carbon</p>
+	  <p style="display:none">guitar</p>
+    </div>
+	</a>
+	
+	<a href="">
+    <div class="w3-quarter w3-hover-grey w3-border">
+      <img src="images/guitar2.jpg" alt="Steak" width="280" height="305">
+      <p>Tanglewood TWCR O Crossroads Orchestra Acoustic Guitar</p>
+	  <p style="display:none">guitar</p>
+    </div>
+	</a>
+
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+  
+    
+    <a href="">
+    <div href="" class="w3-quarter w3-hover-grey w3-border">
+      <img src="images/ukulele1.jpg" alt="Steak" style="width:60%">
+      <p>Makala Baritone Mahogani Ukulele</p>
+	  <p style="display:none">ukulele</p>
+    </div>
+	</a>
+	
+	<a href="">
+    <div href="" class="w3-quarter w3-hover-grey w3-border">
+      <img src="images/ukulele2.jpg" alt="Steak" width="280" height="236">
+      <p>ZTA 21 Inch Soprano Ukulele Hawaii Guitar Beginner Starter Package</p>
+	  <p style="display:none">ukulele</p>
+    </div>
+	</a>
+   
+	
+  </div>
+  
+  <!-- third Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+  
+    <a href="">
+    <div href="" class="w3-quarter w3-hover-grey w3-border">
+      <img src="images/strings.jpg" alt="Steak" style="width:60%">
+      <p>Elixir Acoustic Guitar String Nanoweb Coating 12-53</p>
+	  <p style="display:none">other</p>
+    </div>
+	</a>
+    
+  </div>
+  
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+<p>Follow Us:</p>
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  <p class="w3-medium">© 2019 SoundCoustics. All Rights Reserved</p>
+</footer>
+<script>
+function SearchName() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("nameInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("a");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("p")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+function SearchFac() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("facInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("a");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("p")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>
